@@ -1,0 +1,38 @@
+<div ng-controller="appController">
+    <!-- dashboard -->
+    <nav ng-include="'./ui/navbar.html'"></nav>
+    <div class="form-wrapper" ng-include="'./ui/taskForm.html'"></div>
+    <div ng-repeat="task in currentTasks" class="task">
+        <div>{{ task.title }}</div>
+        <div class="task-details">
+            <div>
+                {{ task.details }}
+            </div>
+            <div>
+                <button ng-click="editTask($index,task)">Edit</button>
+                <button ng-click="displayModalHandler($index)">Delete</button>
+                <!-- MODAL -->
+                <div class="modal fade show" id="exampleModalLive" tabindex="-1" aria-labelledby="exampleModalLiveLabel"
+                    style="display: block;" aria-modal="true" role="dialog" ng-show="displayModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLiveLabel">Modal title</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                    ng-click="closeModal($index)"></button>
+                            </div>
+                            <div class="modal-body">
+                                <input type="password" placeholder="enter password" ng-model="password">
+                                <button type="btn btn-secondary" ng-click="removeTask($index,password)">Confirm Password</button>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                    ng-click="closeModal($index)">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

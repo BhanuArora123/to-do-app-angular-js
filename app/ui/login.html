@@ -1,0 +1,14 @@
+<div class="form-wrapper">
+    <form class="form-body" name="loginForm" novalidate>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Email</span>
+            <input class="form-control" type="email" placeholder="Email" ng-required="true" name="email" ng-model="user.email">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Password</span>
+            <input class="form-control" type="password" placeholder="password" aria-label="Password"
+                aria-describedby="basic-addon1" name="password" ng-required="true" ng-model="user.password">
+        </div>
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2" ng-disabled="loginForm.email.$invalid || loginForm.password.$invalid" ng-click="loginHandler()">Button</button>
+    </form>
+</div>

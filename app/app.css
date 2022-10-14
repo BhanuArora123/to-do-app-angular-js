@@ -1,25 +1,21 @@
-/* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+.task,.task-wrapper{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  height: 50px;
+  margin: 0 25%;
 }
-
-.menu:before {
-  content: "[";
+.task-details{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  height: 75px;
+  width: 100%;
+  justify-content: space-evenly;
 }
-
-.menu:after {
-  content: "]";
-}
-
-.menu > li {
-  display: inline;
-}
-
-.menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
+input.ng-invalid.ng-touched{
+  border: 1px solid red;
 }

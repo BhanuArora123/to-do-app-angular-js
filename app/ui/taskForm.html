@@ -1,0 +1,7 @@
+<form name="taskForm" class="form-body" novalidate>
+    <input class="form-input" type="text" name="title" placeholder="enter task title" ng-model="task.title" ng-required="true">
+    <input class="form-input" type="text" name="details" placeholder="enter task details" ng-model="task.details" ng-required="true">
+    <input class="form-input" type="email" name="email" placeholder="enter email" ng-model="task.email" ng-required="true">
+    <input class="form-input" type="password" name="password" placeholder="enter password" ng-model="task.password" ng-required="true">
+    <button class="{{($scope.taskForm.title.$invalid || $scope.taskForm.details.$invalid)?'form-button button-disabled':'form-button'}}" type="button" ng-disabled="taskForm.title.$invalid || taskForm.details.$invalid || taskForm.password.$invalid || taskForm.email.$invalid" ng-click="addTask(task)" >Add Task</button>
+</form>
